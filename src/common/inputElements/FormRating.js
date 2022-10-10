@@ -19,11 +19,11 @@ export default function FormRating({ control, name, helperText }) {
     <Box sx={{ display: "flex" }}>
       <FormControl
         error={!!error}
-        sx={{ my: 0 }}
+        sx={{ my: 2 }}
         component="fieldset"
         variant="standard"
       >
-        <FormLabel component="legend">Rating</FormLabel>
+        <FormLabel component="legend">Rating your Skill</FormLabel>
         <Rating onChange={onChange} value={value} />
         <FormHelperText>{error?.message}</FormHelperText>
       </FormControl>

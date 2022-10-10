@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import MyForm from "./MainForm";
-import { ValidationSchema } from "../../common/Validation/ValidationSchema";
+import MyForm from "./StepperForm";
+import { ValidationSchema } from "../../../common/Validation/ValidationSchema";
 
-const MainFormContainer = () => {
+const StepperFormContainer = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   const currentValidationSchema = ValidationSchema[activeStep];
@@ -48,4 +48,4 @@ const MainFormContainer = () => {
   );
 };
 
-export default MainFormContainer;
+export default StepperFormContainer;

@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Step, StepLabel, Stepper, Typography } from "@mui/material";
-import UserInformation from "../Pages/UserInformation";
-import Aquisition from "../Pages/Address";
 import { DevTool } from "@hookform/devtools";
-import Skill from "../Pages/Skill";
+import UserInformationForm from "../Forms/UserInformationForm";
+import AddressForm from "../Forms/AddressForm";
+import SkillForm from "../Forms/SkillForm";
 
-const MainForm = ({
+const StepperForm = ({
   handleBack,
   onSubmit,
   handleNext,
@@ -36,11 +36,11 @@ const MainForm = ({
             {(function getStepContent(activeStep) {
               switch (activeStep) {
                 case 0:
-                  return <UserInformation control={control} />;
+                  return <UserInformationForm control={control} />;
                 case 1:
-                  return <Aquisition control={control} />;
+                  return <AddressForm control={control} />;
                 case 2:
-                  return <Skill control={control} />;
+                  return <SkillForm control={control} />;
                 default:
                   return "this is default";
               }
@@ -77,4 +77,4 @@ const MainForm = ({
   );
 };
 
-export default MainForm;
+export default StepperForm;

@@ -9,7 +9,7 @@ import { useController } from "react-hook-form";
 export default function FormCheckBox({ control, name, helperText }) {
   const {
     field: { onChange, value },
-    fieldState: { invalid, error },
+    fieldState: { error },
   } = useController({
     name,
     control,
@@ -18,7 +18,7 @@ export default function FormCheckBox({ control, name, helperText }) {
   return (
     <Box sx={{ display: "flex" }}>
       <FormControl
-        error={invalid}
+        error={!!error}
         component="fieldset"
         variant="standard"
       >
@@ -26,7 +26,7 @@ export default function FormCheckBox({ control, name, helperText }) {
           control={<Checkbox onChange={onChange} value={value}/>}
           label="Term And Condition"
         />
-        <FormHelperText>{invalid ? error?.message : helperText}</FormHelperText>
+        <FormHelperText>{error?.message}</FormHelperText>
       </FormControl>
     </Box>
   );

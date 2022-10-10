@@ -15,9 +15,9 @@ export default function FormSlider({ name, control, helperText }) {
   return (
     <Box >
       <FormControl error={invalid}>
-        <Typography>My Slider</Typography>
+        <Typography>Your intrest in Development</Typography>
         <Slider sx={{width:400}} onChange={onChange} value={value} />
-        <FormHelperText sx={{margin:"0px 0px 20px 0px"}}>{invalid ? error?.message : helperText}</FormHelperText>
+        <FormHelperText sx={{margin:"0px 0px 20px 0px"}}>{error?.message}</FormHelperText>
       </FormControl>
     </Box>
   );
