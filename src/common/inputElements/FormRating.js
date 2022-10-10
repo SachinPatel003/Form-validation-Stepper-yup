@@ -9,7 +9,7 @@ import { Rating } from "@mui/material";
 export default function FormRating({ control, name, helperText }) {
   const {
     field: { onChange, value },
-    fieldState: { invalid, error },
+    fieldState: {  error },
   } = useController({
     name,
     control,
@@ -18,14 +18,14 @@ export default function FormRating({ control, name, helperText }) {
   return (
     <Box sx={{ display: "flex" }}>
       <FormControl
-        error={invalid}
+        error={!!error}
         sx={{ my: 0 }}
         component="fieldset"
         variant="standard"
       >
         <FormLabel component="legend">Rating</FormLabel>
         <Rating onChange={onChange} value={value} />
-        <FormHelperText>{invalid ? error?.message : helperText}</FormHelperText>
+        <FormHelperText>{error?.message}</FormHelperText>
       </FormControl>
     </Box>
   );
